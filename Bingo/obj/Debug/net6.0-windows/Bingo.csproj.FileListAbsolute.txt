@@ -1,0 +1,17 @@
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.exe
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.deps.json
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.runtimeconfig.json
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.dll
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\ref\Bingo.dll
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.pdb
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.Form1.resources
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.csproj.GenerateResource.cache
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.AssemblyInfoInputs.cache
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.AssemblyInfo.cs
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.csproj.CoreCompileInputs.cache
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.dll
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\ref\Bingo.dll
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.pdb
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\obj\Debug\net6.0-windows\Bingo.genruntimeconfig.cache
+D:\Documentos\Projetos\VisualStudio\Bingo\Bingo\bin\Debug\net6.0-windows\Bingo.dll.config
