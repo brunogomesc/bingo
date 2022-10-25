@@ -7,21 +7,15 @@ namespace Bingo
     public class ValidateAppSettings
     {
 
-        private static void ValidateChurchName()
+        public static void ValidateChurchName()
         {
 
-            String? nameChurchSettings = ConfigurationManager.AppSettings.Get("nameChurch");
+            string? nameChurchSettings = ConfigurationManager.AppSettings.Get("nameChurch");
 
-            //if (nameChurchSettings?.Length == 0)
-            //{
-
-            //    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
-            //    config.AppSettings.Settings.Remove("nameChurch");
-            //    config.AppSettings.Settings.Add("nameChurch", this.tb_CampoNomeIgreja.Text);
-            //    config.Save(ConfigurationSaveMode.Modified);
-            //    ConfigurationManager.RefreshSection("appSettings");
-
-            //}
+            if (nameChurchSettings == "SEM_VALOR_DEFINIDO")
+            {
+                Application.Run(new Views.SaveChurchName());
+            }
 
         }
 
