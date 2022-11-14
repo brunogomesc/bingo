@@ -1,0 +1,6 @@
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.exe
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.dll
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.deps.json
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.runtimeconfig.json
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.dll.config
+D:\Documentos\Projetos\VisualStudio\Bingo\Publish\Bingo.pdb

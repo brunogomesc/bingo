@@ -7,7 +7,7 @@ namespace Bingo
     public class ValidateAppSettings
     {
 
-        public static void ValidateChurchName()
+        public static bool ValidateChurchName()
         {
 
             string? nameChurchSettings = ConfigurationManager.AppSettings.Get("nameChurch");
@@ -15,7 +15,10 @@ namespace Bingo
             if (nameChurchSettings == "SEM_VALOR_DEFINIDO")
             {
                 Application.Run(new Views.SaveChurchName());
+                return false;
             }
+
+            return true;
 
         }
 
