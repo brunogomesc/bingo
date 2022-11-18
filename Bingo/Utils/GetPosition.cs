@@ -36,23 +36,23 @@ namespace Bingo.Utils
 
             //B
             Session.Session.Instance.NextPositionBX = 10;
-            Session.Session.Instance.NextPositionBY = 135;
+            Session.Session.Instance.NextPositionBY = 140;
 
             //I
             Session.Session.Instance.NextPositionIX = 280;
-            Session.Session.Instance.NextPositionIY = 135;
+            Session.Session.Instance.NextPositionIY = 140;
 
             //N
             Session.Session.Instance.NextPositionNX = 585;
-            Session.Session.Instance.NextPositionNY = 135;
+            Session.Session.Instance.NextPositionNY = 140;
 
             //G
             Session.Session.Instance.NextPositionGX = 935;
-            Session.Session.Instance.NextPositionGY = 135;
+            Session.Session.Instance.NextPositionGY = 140;
 
             //O
             Session.Session.Instance.NextPositionOX = 1290;
-            Session.Session.Instance.NextPositionOY = 135;
+            Session.Session.Instance.NextPositionOY = 140;
 
             //Current Ball
             Session.Session.Instance.CurrentBall = 0;

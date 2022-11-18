@@ -58,6 +58,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numero Sorteado";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewInsertedNumber_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

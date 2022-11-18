@@ -17,5 +17,12 @@ namespace Bingo.Views
             InitializeComponent();
             this.lbl_Number.Text = number;
         }
+
+        private void ViewInsertedNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyValue.Equals(27)) this.Close();
+
+        }
     }
 }

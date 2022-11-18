@@ -16,6 +16,7 @@ namespace Bingo.Views
         private int[] BallsDrawn = new int[75];
         private int count = 0;
         private Control[] labels = new Control[75];
+        private Control[] labelsToBeRemove = new Control[75];
         #endregion
 
         public Form1()
@@ -89,19 +90,19 @@ namespace Bingo.Views
         private void ResizeFormInitialStateLoadComponents()
         {
             //Ajuste letra B
-            lbl_B.Location = new Point(30, 30);
+            lbl_B.Location = new Point(30, 5);
 
             //Ajuste Letra I
-            lbl_I.Location = new Point(350, 30);
+            lbl_I.Location = new Point(350, 5);
 
             //Ajuste Letra N
-            lbl_N.Location = new Point(670, 30);
+            lbl_N.Location = new Point(670, 5);
 
             //Ajuste Letra G
-            lbl_G.Location = new Point(1040, 30);
+            lbl_G.Location = new Point(1040, 5);
 
             //Ajuste Letra O
-            lbl_O.Location = new Point(1400, 30);
+            lbl_O.Location = new Point(1400, 5);
 
 
 
@@ -178,12 +179,13 @@ namespace Bingo.Views
 
             this.newComponent = new Label();
             SuspendLayout();
-            this.newComponent.Font = new Font("Segoe UI", 56F, FontStyle.Bold, GraphicsUnit.Point);
+            this.newComponent.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
             this.newComponent.Location = new Point(GetPosition.GetPositionX(number), GetPosition.GetPositionY(number));
             this.newComponent.Name = nameComponent;
-            this.newComponent.Size = new Size(130, 100);
+            this.newComponent.Size = new Size(140, 100);
             this.newComponent.TabIndex = 0;
             this.newComponent.Text = number.ToString();
+            this.newComponent.DoubleClick += new EventHandler(SelectBallsToBeRemoved);
             this.Controls.Add(this.newComponent);
             this.ResumeLayout(false);
 
@@ -250,7 +252,70 @@ namespace Bingo.Views
                 this.BallsDrawn[i] = 0;
             }
 
+            for (int i = 0; i < count; i++)
+            {
+                this.labels[i] = new Control();
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                this.labelsToBeRemove[i] = new Control();
+            }
+
             this.count = 0;
+
+        }
+
+        private void SelectBallsToBeRemoved(Object sender, EventArgs e)
+        {
+            Label labelSelected = ((Label)sender);
+            if(labelSelected.ForeColor == Color.Red) labelSelected.ForeColor = Color.Black;
+            else labelSelected.ForeColor = Color.Red;
+        }
+
+        private void Btn_Remove_Click(object sender, EventArgs e)
+        {
+
+            ValidateSelectedBallsToBeRemoved();
+
+            if (this.labelsToBeRemove[0] is not null)
+            {
+                DialogResult result = FormatMessageBox.FormatMessage("Deseja mesmo excluir os números selecionados?");
+                if (result == DialogResult.Yes) RemoveBalls();
+            }
+            else
+            {
+                FormatMessageBox.FormatMessage("Não é possivel remover, pois não tem nenhum número selecionado!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void ValidateSelectedBallsToBeRemoved()
+        {
+            int count = 0;
+
+            foreach (Control control in this.Controls)
+            {
+
+                if (!control.Text.Contains('B') && !control.Text.Contains('I') && !control.Text.Contains('N') && !control.Text.Contains('G') && !control.Text.Contains('O') && control is Label && control.ForeColor == Color.Red)
+                {
+                    this.labelsToBeRemove[count] = control;
+                    count++;
+                }
+
+            }
+        }
+
+        private void RemoveBalls()
+        {
+
+            foreach (Control control in this.labelsToBeRemove)
+            {
+                if (control == null) break;
+
+                this.Controls.Remove(control);
+                control.Dispose();
+            }
 
         }
     }
