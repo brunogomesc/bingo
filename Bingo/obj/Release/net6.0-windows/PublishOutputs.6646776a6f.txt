@@ -1,0 +1,6 @@
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.exe
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.dll
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.deps.json
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.runtimeconfig.json
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.dll.config
+C:\Documentos\Projetos\bingo-master\Bingo\bin\Release\net6.0-windows\publish\Bingo.pdb

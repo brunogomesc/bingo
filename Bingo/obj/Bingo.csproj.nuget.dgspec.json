@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\Projetos\\VisualStudio\\Bingo\\Bingo\\Bingo.csproj": {}
+    "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\Projetos\\VisualStudio\\Bingo\\Bingo\\Bingo.csproj": {
+    "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\Projetos\\VisualStudio\\Bingo\\Bingo\\Bingo.csproj",
+        "projectUniqueName": "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj",
         "projectName": "Bingo",
-        "projectPath": "D:\\Documentos\\Projetos\\VisualStudio\\Bingo\\Bingo\\Bingo.csproj",
-        "packagesPath": "C:\\Users\\Bruno Gomes\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\Projetos\\VisualStudio\\Bingo\\Bingo\\obj\\",
+        "projectPath": "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bruno Gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +25,6 @@
           "net6.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
@@ -65,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

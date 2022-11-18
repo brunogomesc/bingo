@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "97/LiDY3g9T3bxxsXmZvdM4PXBzo3Wx9U+YTqlNHIXozRejRWh3iZULeCKafr/RHJVTGRP3u7MDLFFkUk4TaBA==",
+  "success": true,
+  "projectFilePath": "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bruno\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.11\\microsoft.netcore.app.runtime.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.11\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.11\\microsoft.aspnetcore.app.runtime.win-x64.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
