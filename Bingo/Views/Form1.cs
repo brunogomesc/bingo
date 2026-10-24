@@ -257,10 +257,7 @@ namespace Bingo.Views
                 this.labels[i] = new Control();
             }
 
-            for (int i = 0; i < count; i++)
-            {
-                this.labelsToBeRemove[i] = new Control();
-            }
+            Array.Clear(this.labelsToBeRemove, 0, this.labelsToBeRemove.Length);
 
             this.count = 0;
 
@@ -292,6 +289,7 @@ namespace Bingo.Views
 
         private void ValidateSelectedBallsToBeRemoved()
         {
+            Array.Clear(this.labelsToBeRemove, 0, this.labelsToBeRemove.Length);
             int count = 0;
 
             foreach (Control control in this.Controls)
@@ -312,11 +310,44 @@ namespace Bingo.Views
             foreach (Control control in this.labelsToBeRemove)
             {
                 if (control == null) break;
+                if (control is not Label || control.IsDisposed || !int.TryParse(control.Text, out int number)) continue;
+
+                for (int i = 0; i < this.count; i++)
+                {
+                    if (this.BallsDrawn[i] != number) continue;
+
+                    for (int j = i; j < this.count - 1; j++)
+                    {
+                        this.BallsDrawn[j] = this.BallsDrawn[j + 1];
+                    }
+
+                    this.count--;
+                    this.BallsDrawn[this.count] = 0;
+                    break;
+                }
 
                 this.Controls.Remove(control);
                 control.Dispose();
             }
 
+            Array.Clear(this.labelsToBeRemove, 0, this.labelsToBeRemove.Length);
+            RepositionBalls();
+
+        }
+
+        private void RepositionBalls()
+        {
+            int currentBall = Session.Session.Instance.CurrentBall;
+            GetPosition.SetValuesInitialSession();
+            Session.Session.Instance.CurrentBall = currentBall;
+
+            for (int i = 0; i < this.count; i++)
+            {
+                int number = this.BallsDrawn[i];
+                Control control = this.Controls["lbl_" + number.ToString()];
+                control.Location = new Point(GetPosition.GetPositionX(number), GetPosition.GetPositionY(number));
+                UpdateNextPositions(ConvertNumber.ConvertToView(number), number);
+            }
         }
     }
 }
