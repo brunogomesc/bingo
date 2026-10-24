@@ -9,9 +9,7 @@ namespace Bingo
 
             InitializeComponent();
 
-            ValidateAppSettings validateAppSettings = new ValidateAppSettings();
-
-            validateAppSettings.ValidateChurchName();
+            ValidateAppSettings.ValidateChurchName(this);
 
         }
 
