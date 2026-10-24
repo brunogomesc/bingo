@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MZShdnscZ2g=",
+  "dgSpecHash": "65oyRg+jFyZ0G6nCAf3eQE2rHREzhuqnGSId0TsMOa274vqSh006OiSHiBPscLFKfba0rfMPij6LHbGm5THELQ==",
   "success": true,
-  "projectFilePath": "/workspace/Bingo/Bingo.csproj",
-  "expectedPackageFiles": [
-    "/cache/nuget/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "/cache/nuget/microsoft.windowsdesktop.app.ref/6.0.36/microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "/cache/nuget/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
-    "/cache/nuget/microsoft.netcore.app.host.linux-x64/6.0.36/microsoft.netcore.app.host.linux-x64.6.0.36.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Documentos\\Projetos\\bingo-master\\Bingo\\Bingo.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
