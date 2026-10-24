@@ -21,11 +21,29 @@ namespace Bingo.Views
         private void Btn_SaveNameChurch_Click(object sender, EventArgs e)
         {
 
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
-            config.AppSettings.Settings.Remove("nameChurch");
-            config.AppSettings.Settings.Add("nameChurch", this.txb_NameChurch.Text);
-            config.Save(ConfigurationSaveMode.Modified, true);
-            ConfigurationManager.RefreshSection("appSettings");
+            string churchName = this.txb_NameChurch.Text.Trim();
+            if (string.IsNullOrWhiteSpace(churchName))
+            {
+                MessageBox.Show(this, "Informe o nome da igreja.", "Nome da igreja", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings.Remove("nameChurch");
+                config.AppSettings.Settings.Add("nameChurch", churchName);
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+                DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex) when (ex is ConfigurationErrorsException
+                || ex is UnauthorizedAccessException
+                || ex is System.IO.IOException
+                || ex is System.Security.SecurityException)
+            {
+                MessageBox.Show(this, "Não foi possível salvar o nome da igreja. Verifique a permissão de escrita na pasta do aplicativo e tente novamente.", "Erro ao salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

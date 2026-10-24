@@ -132,7 +132,13 @@ namespace Bingo.Views
             grb_Functions.Padding = new Padding(3, 2, 3, 2);
 
             //Captura o nome da Igreja
-            if (ValidateAppSettings.ValidateChurchName()) lbl_NameChurch.Text = ConfigurationManager.AppSettings.Get("nameChurch");
+            if (!ValidateAppSettings.ValidateChurchName(this))
+            {
+                Close();
+                return;
+            }
+
+            lbl_NameChurch.Text = ConfigurationManager.AppSettings.Get("nameChurch");
 
         }
 
