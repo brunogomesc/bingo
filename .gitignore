@@ -1,0 +1,13 @@
+# Visual Studio and .NET build artifacts
+[Bb]in/
+[Oo]bj/
+.vs/
+*.suo
+*.user
+*.pdb
+*.userprefs
+[Pp]ublish/
+*.publish/
+TestResults/
+*.log
+packages/
