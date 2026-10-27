@@ -53,6 +53,7 @@ namespace Bingo.Views
                         UpdateNextPositions(ConvertNumber.ConvertToView(number), number);
 
                         ClearBallField();
+                        SaveGameState();
 
                     }
 
@@ -84,10 +85,40 @@ namespace Bingo.Views
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ResizeFormInitialStateLoadComponents();
+            if (!ResizeFormInitialStateLoadComponents()) return;
+
+            var state = GameStateStore.Load();
+            if (state == null) return;
+
+            if (FormatMessageBox.FormatMessage("Retomar partida anterior?") != DialogResult.Yes)
+            {
+                GameStateStore.Clear();
+                return;
+            }
+
+            foreach (var label in state.Labels)
+            {
+                GenerateNewNumberComponent(label.Number);
+                this.newComponent.Location = new Point(label.X, label.Y);
+            }
+
+            Array.Copy(state.BallsDrawn, this.BallsDrawn, state.BallsDrawn.Length);
+            this.count = state.BallsDrawn.Length;
+            var session = Session.Session.Instance;
+            session.CurrentBall = state.CurrentBall;
+            session.NextPositionBX = state.NextPositionBX;
+            session.NextPositionBY = state.NextPositionBY;
+            session.NextPositionIX = state.NextPositionIX;
+            session.NextPositionIY = state.NextPositionIY;
+            session.NextPositionNX = state.NextPositionNX;
+            session.NextPositionNY = state.NextPositionNY;
+            session.NextPositionGX = state.NextPositionGX;
+            session.NextPositionGY = state.NextPositionGY;
+            session.NextPositionOX = state.NextPositionOX;
+            session.NextPositionOY = state.NextPositionOY;
         }
 
-        private void ResizeFormInitialStateLoadComponents()
+        private bool ResizeFormInitialStateLoadComponents()
         {
             //Ajuste letra B
             lbl_B.Location = new Point(30, 5);
@@ -135,10 +166,11 @@ namespace Bingo.Views
             if (!ValidateAppSettings.ValidateChurchName(this))
             {
                 Close();
-                return;
+                return false;
             }
 
             lbl_NameChurch.Text = ConfigurationManager.AppSettings.Get("nameChurch");
+            return true;
 
         }
 
@@ -215,6 +247,7 @@ namespace Bingo.Views
                     DropComponents();
                     GetPosition.SetValuesInitialSession();
                     SetInitialValuesBalls();
+                    GameStateStore.Clear();
                     this.txb_NumberInserted.Focus();
 
                 }
@@ -338,7 +371,45 @@ namespace Bingo.Views
 
             Array.Clear(this.labelsToBeRemove, 0, this.labelsToBeRemove.Length);
             RepositionBalls();
+            SaveGameState();
 
+        }
+
+        private void SaveGameState()
+        {
+            var session = Session.Session.Instance;
+            var state = new GameState
+            {
+                BallsDrawn = this.BallsDrawn.Take(this.count).ToArray(),
+                CurrentBall = session.CurrentBall,
+                NextPositionBX = session.NextPositionBX,
+                NextPositionBY = session.NextPositionBY,
+                NextPositionIX = session.NextPositionIX,
+                NextPositionIY = session.NextPositionIY,
+                NextPositionNX = session.NextPositionNX,
+                NextPositionNY = session.NextPositionNY,
+                NextPositionGX = session.NextPositionGX,
+                NextPositionGY = session.NextPositionGY,
+                NextPositionOX = session.NextPositionOX,
+                NextPositionOY = session.NextPositionOY,
+            };
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.Name.StartsWith("lbl_")
+                    && int.TryParse(control.Name.Substring(4), out int number)
+                    && number >= 1 && number <= 75)
+                {
+                    state.Labels.Add(new GameLabelState
+                    {
+                        Number = number,
+                        X = control.Location.X,
+                        Y = control.Location.Y
+                    });
+                }
+            }
+
+            GameStateStore.Save(state);
         }
 
         private void RepositionBalls()
